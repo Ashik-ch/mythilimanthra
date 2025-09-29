@@ -1,0 +1,111 @@
+{
+    "hero": {
+        "title": "Welcome to Mythili Manthra",
+        "tagline": "Premium Skin & Hair Care Clinic in Bangalore",
+        "ctaText": "Book Appointment",
+        "ctaLink": "#contact"
+    },
+    "about": {
+        "heading": "About Mythili Manthra",
+        "content": "Mythili Manthra is a specialized clinic dedicated to enhancing natural beauty through personalized skin and hair care solutions. Established in August 2024, it stands out for its commitment to excellence, innovation, and personalized care. Our team of experienced dermatologists and hair specialists use cutting-edge technology to deliver real, lasting results."
+    },
+    "services": [
+        {
+            "name": "Laser Hair Removal",
+            "description": "Achieve smooth, hair-free skin with advanced laser technology.",
+            "icon": "lasers-icon"
+        },
+        {
+            "name": "Acne Treatment",
+            "description": "Address stubborn acne with comprehensive solutions.",
+            "icon": "acne-icon"
+        },
+        {
+            "name": "Hair Restoration",
+            "description": "Regain confidence with innovative hair restoration services.",
+            "icon": "hair-icon"
+        },
+        {
+            "name": "Anti-Aging Solutions",
+            "description": "Rejuvenate and revitalize skin with anti-aging treatments.",
+            "icon": "aging-icon"
+        },
+        {
+            "name": "Chemical Peels",
+            "description": "Reveal brighter, smoother skin through customized chemical peels.",
+            "icon": "peel-icon"
+        },
+        {
+            "name": "Microneedling",
+            "description": "Improve the appearance of scars, stretch marks, and uneven skin texture.",
+            "icon": "needle-icon"
+        }
+    ],
+    "expertise": {
+        "heading": "Expertise & Technology",
+        "content": "Our clinic employs state-of-the-art equipment and the latest treatment techniques to ensure effective and safe solutions. Each treatment plan is customized to meet specific needs and goals, ensuring personalized care for every individual."
+    },
+    "contact": {
+        "heading": "Contact Us",
+        "address": "No 866, ITI Layout, 18th Main Road, HSR Layout, Bangalore - 560102",
+        "phone": "+91 80882 94931",
+        "email": "mythilimanthra@gmail.com",
+        "mapLink": "https://goo.gl/maps/example",
+        "appointmentForm": {
+            "fields": [
+                {
+                    "name": "fullName",
+                    "label": "Full Name",
+                    "type": "text",
+                    "required": true
+                },
+                {
+                    "name": "email",
+                    "label": "Email",
+                    "type": "email",
+                    "required": true
+                },
+                {
+                    "name": "phone",
+                    "label": "Phone Number",
+                    "type": "text",
+                    "required": true
+                },
+                {
+                    "name": "service",
+                    "label": "Select Service",
+                    "type": "select",
+                    "options": [
+                        "Laser Hair Removal",
+                        "Acne Treatment",
+                        "Hair Restoration",
+                        "Anti-Aging Solutions",
+                        "Chemical Peels",
+                        "Microneedling"
+                    ],
+                    "required": true
+                },
+                {
+                    "name": "message",
+                    "label": "Message",
+                    "type": "textarea",
+                    "required": false
+                }
+            ]
+        }
+    },
+    "footer": {
+        "socials": {
+            "instagram": "https://instagram.com/mythilimanthra",
+            "facebook": "https://facebook.com/mythilimanthra",
+            "linkedin": "https://linkedin.com/company/mythilimanthra"
+        },
+        "hours": "Monday to Saturday, 9:00 AM to 6:00 PM",
+        "quickLinks": [
+            "Home",
+            "About",
+            "Services",
+            "Contact"
+        ]
+    }
+}
