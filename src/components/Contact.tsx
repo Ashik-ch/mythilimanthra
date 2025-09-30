@@ -2,6 +2,8 @@ import React from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import data from '../content.json'
 
+import { FormField } from '../types' 
+  
 export const Contact: React.FC = () => {
     return (
         <section id="contact" className="mx-auto max-w-7xl px-6 py-20">

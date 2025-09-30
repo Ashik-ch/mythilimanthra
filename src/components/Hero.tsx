@@ -1,44 +1,23 @@
 import React, { useMemo } from 'react'
-import Particles from 'react-tsparticles'
-import { loadFull } from 'tsparticles'
-import { ISourceOptions } from 'tsparticles-engine'
 import { motion, AnimatePresence } from 'framer-motion'
 
 import data from '../content.json'
 
 export const Hero = () => {
-    const particlesOptions: ISourceOptions = useMemo(() => ({
-        fullScreen: { enable: false },
-        background: { color: 'transparent' },
-        particles: {
-            number: { value: 40 },
-            color: { value: ['#F2C237', '#D4A42A', '#8F6817'] },
-            opacity: { value: 0.35 },
-            size: { value: { min: 1, max: 3 } },
-            move: { enable: true, speed: 0.6 },
-            links: { enable: true, color: '#D4A42A', opacity: 0.12 }
-        }
-    }), [])
-
+    
     return (
 
         <section id="home" className="relative overflow-hidden min-h-screen flex items-center">
             {/* Background Image */}
             <div className="absolute inset-0 -z-10">
                 <div className="absolute inset-0 bg-gradient-to-r from-neutral-950 via-neutral-950/80 to-neutral-950/60" />
-                <img 
-                    src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
                     alt="Luxury beauty clinic interior"
                     className="w-full h-full object-cover opacity-40"
                 />
-                <Particles
-                    id="tsparticles"
-                    options={particlesOptions}
-                    init={async (engine) => { await loadFull(engine) }}
-                />
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-neutral-950/30 to-neutral-950" />
             </div>
-            
+
             <div className="mx-auto max-w-7xl px-6 py-28 sm:py-36 lg:py-44 relative z-10">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                     <div>
@@ -52,14 +31,14 @@ export const Hero = () => {
                             {data.hero.ctaText}
                         </motion.a>
                     </div>
-                    <motion.div 
-                        initial={{ opacity: 0, x: 50 }} 
-                        whileInView={{ opacity: 1, x: 0 }} 
+                    <motion.div
+                        initial={{ opacity: 0, x: 50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.3, duration: 0.8 }}
                         className="relative"
                     >
-                        <img 
-                            src="https://barbernation.com.au/wp-content/uploads/2025/05/Skincare-Routine-for-Men.png" 
+                        <img
+                            src="https://barbernation.com.au/wp-content/uploads/2025/05/Skincare-Routine-for-Men.png"
                             alt="Beautiful woman receiving skincare treatment"
                             className="rounded-2xl shadow-2xl gold-ring w-full h-auto"
                         />
