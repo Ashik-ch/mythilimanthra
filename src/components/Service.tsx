@@ -1,21 +1,42 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import bannerImg from '../assets/image/banner.jpg';
+import bannerImg from '../assets/images/banner.jpg';
 
-import data from '../content.json'
+import data from '../content.json';
+
+import img1 from '../assets/images/img1.jpg';
+import img2 from '../assets/images/img2.jpg';
+import img3 from '../assets/images/img3.jpg';
+import img4 from '../assets/images/img4.jpg';
+import img5 from '../assets/images/img5.jpg';
+import img6 from '../assets/images/img6.jpg';
+import img7 from '../assets/images/img7.jpg';
+import img8 from '../assets/images/img8.jpg';
+import img9 from '../assets/images/img9.jpg';
+import img10 from '../assets/images/img10.jpg';
+import img11 from '../assets/images/img11.jpg';
+import img12 from '../assets/images/img12.jpg';
+import img13 from '../assets/images/img13.jpg';
+import img14 from '../assets/images/img14.jpg';
 
 export const Service: React.FC = () => {
     const [expandedService, setExpandedService] = useState<number | null>(null);
 
-    // Service-specific images
     const serviceImages = [
-        "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80", // Laser Hair Removal
-        "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80", // Acne Treatment
-        "https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80", // Hair Restoration
-        "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80", // Anti-Aging
-        "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80", // Chemical Peels
-        "https://images.unsplash.com/photo-1594736797933-d0c4c8a1b8e4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"  // Microneedling
+        img11,  
+        img12,
+        img2, // Acne Treatment
+        img13, // Anti-Aging
+        img14,
+        img4, // Anti-Aging
+        img5, // Chemical Peels
+        img6, // Microneedling
+        img1, // Laser Hair Removal
+        img8,
+        img9,
+        img10,
     ];
+
 
 
 

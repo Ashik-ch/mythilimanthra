@@ -2,9 +2,10 @@ import React, { useMemo } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 import data from '../content.json'
+import img1 from '../assets/images/hero.jpg'
 
 export const Hero = () => {
-    
+
     return (
 
         <section id="home" className="relative overflow-hidden min-h-screen flex items-center">
@@ -38,7 +39,7 @@ export const Hero = () => {
                         className="relative"
                     >
                         <img
-                            src="https://barbernation.com.au/wp-content/uploads/2025/05/Skincare-Routine-for-Men.png"
+                            src={img1}
                             alt="Beautiful woman receiving skincare treatment"
                             className="rounded-2xl shadow-2xl gold-ring w-full h-auto"
                         />
