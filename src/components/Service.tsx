@@ -1,34 +1,111 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import bannerImg from '../assets/image/banner.jpg';
 
 import data from '../content.json'
 
 export const Service: React.FC = () => {
     const [expandedService, setExpandedService] = useState<number | null>(null);
 
+    // Service-specific images
+    const serviceImages = [
+        "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80", // Laser Hair Removal
+        "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80", // Acne Treatment
+        "https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80", // Hair Restoration
+        "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80", // Anti-Aging
+        "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80", // Chemical Peels
+        "https://images.unsplash.com/photo-1594736797933-d0c4c8a1b8e4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"  // Microneedling
+    ];
+
+
+
     return (
         <section id="services" className="mx-auto max-w-7xl px-6 py-20">
-            <motion.h2 initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} className="text-2xl sm:text-3xl font-semibold text-gold-300">
-                Services
+            <motion.h2 initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} className="text-2xl sm:text-3xl font-semibold text-gold-300 text-center mb-16">
+                Our Premium Services
             </motion.h2>
-            <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+            {/* Hero Service Image */}
+            <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="mb-16 relative overflow-hidden rounded-3xl"
+            >
+                <img src={bannerImg}
+                    alt="Premium beauty treatments at Mythili Manthra"
+                    className="w-full h-64 sm:h-80 lg:h-96 object-cover"
+                />
+
+                <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/50 to-transparent" />
+                <div className="absolute bottom-8 left-8 right-8">
+                    <h3 className="text-2xl sm:text-3xl font-bold text-gold-300 mb-2">Transform Your Beauty Journey</h3>
+                    <p className="text-neutral-300 max-w-2xl">Experience the pinnacle of skincare and hair restoration with our state-of-the-art treatments and personalized care approach.</p>
+                </div>
+            </motion.div>
+
+            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
                 {data.services.map((svc, idx) => (
-                    <motion.button key={svc.name} onClick={() => setExpandedService(expandedService === idx ? null : idx)} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4 }} transition={{ duration: 0.4 }} className="text-left rounded-2xl bg-neutral-900/60 p-6 gold-ring hover:shadow-glow focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-500/50">
-                        <div className="flex items-start justify-between gap-4">
-                            <div>
-                                <h3 className="text-lg font-medium text-neutral-100">{svc.name}</h3>
-                                <p className="mt-2 text-sm text-neutral-300">{svc.description}</p>
+                    <motion.div
+                        key={svc.name}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ delay: idx * 0.1, duration: 0.6 }}
+                        className="group"
+                    >
+                        <div
+                            onClick={() => setExpandedService(expandedService === idx ? null : idx)}
+                            className="cursor-pointer rounded-2xl bg-neutral-900/60 gold-ring hover:shadow-glow focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-500/50 overflow-hidden transition-all duration-300 hover:-translate-y-2"
+                        >
+                            <div className="relative overflow-hidden">
+                                <img
+                                    src={serviceImages[idx]}
+                                    alt={`${svc.name} treatment`}
+                                    className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/80 via-transparent to-transparent" />
+                                <div className="absolute top-4 right-4 w-12 h-12 bg-gold-600/90 rounded-full flex items-center justify-center">
+                                    <div className="w-6 h-6 bg-gold-300 rounded-full" />
+                                </div>
                             </div>
-                            <div className="h-10 w-10 rounded-full bg-gold-700/20 flex items-center justify-center gold-ring" aria-hidden />
+
+                            <div className="p-6">
+                                <h3 className="text-xl font-semibold text-neutral-100 mb-3">{svc.name}</h3>
+                                <p className="text-neutral-300 mb-4">{svc.description}</p>
+
+                                <AnimatePresence initial={false}>
+                                    {expandedService === idx && (
+                                        <motion.div
+                                            initial={{ opacity: 0, height: 0 }}
+                                            animate={{ opacity: 1, height: 'auto' }}
+                                            exit={{ opacity: 0, height: 0 }}
+                                            transition={{ duration: 0.3 }}
+                                            className="border-t border-neutral-700 pt-4"
+                                        >
+                                            <p className="text-neutral-300/90 text-sm mb-4">
+                                                Learn more about our {svc.name.toLowerCase()}—tailored plans using advanced technology for your unique goals.
+                                            </p>
+                                            <div className="flex items-center text-gold-400 text-sm font-medium">
+                                                <span>Book Consultation</span>
+                                                <svg className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                                </svg>
+                                            </div>
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
+
+                                {expandedService !== idx && (
+                                    <div className="flex items-center text-gold-400 text-sm font-medium opacity-70">
+                                        <span>Click to learn more</span>
+                                        <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                        </svg>
+                                    </div>
+                                )}
+                            </div>
                         </div>
-                        <AnimatePresence initial={false}>
-                            {expandedService === idx && (
-                                <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }} transition={{ duration: 0.25 }} className="mt-4 text-neutral-300/90 text-sm">
-                                    Learn more about our {svc.name.toLowerCase()}—tailored plans using advanced technology for your unique goals.
-                                </motion.div>
-                            )}
-                        </AnimatePresence>
-                    </motion.button>
+                    </motion.div>
                 ))}
             </div>
         </section>
