@@ -90,7 +90,7 @@ export const Expertise: React.FC = () => {
             </div>
 
             {/* Equipment Gallery */}
-            <motion.div
+            {/* <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
@@ -119,7 +119,7 @@ export const Expertise: React.FC = () => {
                         </motion.div>
                     ))}
                 </div>
-            </motion.div>
+            </motion.div> */}
         </section>
     )
 }
