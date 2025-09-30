@@ -2,7 +2,7 @@ import data from './content.json'
 import { Footer } from './components/Footer';
 import { Hero } from './components/Hero'
 import { About } from './components/About';
-import { Contact } from 'lucide-react';
+import { Contact } from './components/Contact';
 import { Service } from './components/Service';
 import { Expertise } from './components/Expertise';
 

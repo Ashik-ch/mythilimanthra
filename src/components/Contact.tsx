@@ -2,24 +2,23 @@ import React from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import data from '../content.json'
 
-import { FormField } from '../types' 
-  
+import { FormField } from '../types'
+
 export const Contact: React.FC = () => {
     return (
         <section id="contact" className="mx-auto max-w-7xl px-6 py-20">
             <motion.h2 initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} className="text-2xl sm:text-3xl font-semibold text-gold-300 text-center mb-16">
                 {data.contact.heading}
             </motion.h2>
-            
             {/* Clinic Showcase */}
-            <motion.div 
-                initial={{ opacity: 0, y: 30 }} 
-                whileInView={{ opacity: 1, y: 0 }} 
+            <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
                 className="mb-16 relative overflow-hidden rounded-3xl"
             >
-                <img 
-                    src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 
+                <img
+                    src="https://media.istockphoto.com/id/1185904072/photo/woman-face-portrait-with-graphic-icons-of-vitamins-and-minerals-for-skin-treatment.jpg?s=612x612&w=0&k=20&c=TbCdbMn0Fe5nUS57zHjAMaxapFrRqcxxdjOSHWZFgak="
                     alt="Mythili Manthra clinic interior"
                     className="w-full h-64 sm:h-80 lg:h-96 object-cover"
                 />
@@ -32,9 +31,9 @@ export const Contact: React.FC = () => {
 
             <div className="grid gap-12 lg:grid-cols-2">
                 {/* Contact Info & Map */}
-                <motion.div 
-                    initial={{ opacity: 0, x: -50 }} 
-                    whileInView={{ opacity: 1, x: 0 }} 
+                <motion.div
+                    initial={{ opacity: 0, x: -50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8 }}
                     className="space-y-6"
                 >
@@ -83,16 +82,21 @@ export const Contact: React.FC = () => {
                             </svg>
                         </a>
                     </div>
-                    
+
                     <div className="aspect-video w-full overflow-hidden rounded-2xl gold-ring bg-neutral-950">
-                        <iframe title="Map" className="h-full w-full" src={`https://www.google.com/maps?q=${encodeURIComponent(data.contact.address)}&output=embed`} loading="lazy" />
+                        <iframe
+                            title="Bangalore Map"
+                            className="h-full w-full"
+                            src="https://www.google.com/maps?q=Bangalore&output=embed"
+                            loading="lazy"
+                        />
                     </div>
                 </motion.div>
 
                 {/* Appointment Form */}
-                <motion.div 
-                    initial={{ opacity: 0, x: 50 }} 
-                    whileInView={{ opacity: 1, x: 0 }} 
+                <motion.div
+                    initial={{ opacity: 0, x: 50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8 }}
                 >
                     <Form fields={data.contact.appointmentForm.fields as FormField[]} services={data.services.map(s => s.name)} />
